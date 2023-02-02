@@ -1,14 +1,15 @@
 package banco;
 
-import modelos.Conta;
+import cadastro.Pessoa;
+
 
 public class Banco {
 
 	public static void main(String[] args) {
-		
-		Conta A001 = new Conta("ContaVinicius");
-		System.out.println(A001.toString());
-
+		Pessoa novaPessoa = new Pessoa("Vinicius", 36, 500144985, 5000);
+		novaPessoa.setNome("Vinicius");
+		Conta conta01 = new Conta(novaPessoa, 0, 0);
+		System.out.println(conta01.getTitular().getNome());
 	}
 
 }
