@@ -10,6 +10,9 @@ public class Banco {
 		novaPessoa.setNome("Vinicius");
 		Conta conta01 = new Conta(novaPessoa, 0, 0);
 		System.out.println(conta01.getTitular().getNome());
+		System.out.println(conta01.getTitular().getCpf());
+		System.out.println(conta01.getTitular().getIdade());
+		System.out.println(conta01.getTitular().getRenda());
 	}
 
 }

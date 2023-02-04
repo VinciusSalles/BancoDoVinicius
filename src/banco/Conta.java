@@ -13,7 +13,7 @@ public class Conta {
 			this.titular = titular;
 			this.agencia = agencia;
 			this.numeroConta = numeroConta;
-			saldo = 0;
+			saldo = 500;
 		}
 	
 		public float adicionarSaldo(float valor) {
