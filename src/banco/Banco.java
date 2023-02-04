@@ -34,7 +34,7 @@ public class Program {
 		System.out.println(account);
 		
 		System.out.println();
-		System.out.println("Enter a new deposit value: ");
+		System.out.println("Entre com um novo valor de deposito: ");
 		double depositValue = sc.nextDouble();
 		account.deposit(depositValue);
 		System.out.println("Updated account data: ");
