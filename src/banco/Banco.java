@@ -1,18 +1,54 @@
-package banco;
+package application;
 
-import cadastro.Pessoa;
+import java.util.Locale;
+import java.util.Scanner;
 
+import entities.Account;
 
-public class Banco {
+public class Program {
 
 	public static void main(String[] args) {
-		Pessoa novaPessoa = new Pessoa("Vinicius", 36, 500144985, 5000);
-		novaPessoa.setNome("Vinicius");
-		Conta conta01 = new Conta(novaPessoa, 0, 0);
-		System.out.println(conta01.getTitular().getNome());
-		System.out.println(conta01.getTitular().getCpf());
-		System.out.println(conta01.getTitular().getIdade());
-		System.out.println(conta01.getTitular().getRenda());
-	}
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Account account;
+		
+		System.out.println("Enter account number: ");
+		int number = sc.nextInt();
+		System.out.println("Enter account holder: ");
+		sc.nextLine();
+		String holder = sc.nextLine();
+		System.out.println("Is there an initial deposit (y/n)? ");
+		char response = sc.next().charAt(0);
+		if (response == 'y') {
+			System.out.println("Enter initial deposit value: ");
+			double initialDeposit = sc.nextDouble();
+			account = new Account(number, holder, initialDeposit);
+		}
+		else {
+		   account = new Account(number, holder);
+		}
+		
+		System.out.println();
+		System.out.println("Account data: ");
+		System.out.println(account);
+		
+		System.out.println();
+		System.out.println("Enter a new deposit value: ");
+		double depositValue = sc.nextDouble();
+		account.deposit(depositValue);
+		System.out.println("Updated account data: ");
+		System.out.println(account);
+		
+		System.out.println();
+		System.out.println("Enter a whitdraw value: ");
+		double whitdrawValue = sc.nextDouble();
+		account.whitdraw(whitdrawValue);
+		System.out.println("Updated account data: ");
+		System.out.println(account);
+		
+		
+		sc.close();
 
+	}
 }

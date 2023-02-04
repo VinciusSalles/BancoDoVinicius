@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Vinicius
- *
- */
-module BancoDoVinicius {
-}
