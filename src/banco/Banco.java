@@ -13,15 +13,15 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		Account account;
 		
-		System.out.println("Enter account number: ");
+		System.out.println("Digite o numero da conta: ");
 		int number = sc.nextInt();
-		System.out.println("Enter account holder: ");
+		System.out.println("Digite o nome do titular: ");
 		sc.nextLine();
 		String holder = sc.nextLine();
-		System.out.println("Is there an initial deposit (y/n)? ");
+		System.out.println("Deseja fazer um deposito inicial (s/n)? ");
 		char response = sc.next().charAt(0);
-		if (response == 'y') {
-			System.out.println("Enter initial deposit value: ");
+		if (response == 's') {
+			System.out.println("Entre com o valor inicial a ser depositado: ");
 			double initialDeposit = sc.nextDouble();
 			account = new Account(number, holder, initialDeposit);
 		}
