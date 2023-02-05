@@ -30,7 +30,7 @@ public class Program {
 		}
 		
 		System.out.println();
-		System.out.println("Account data: ");
+		System.out.println("Dados da conta: ");
 		System.out.println(account);
 		
 		System.out.println();
@@ -44,7 +44,7 @@ public class Program {
 		System.out.println("Digite o valor a ser retirado: ");
 		double whitdrawValue = sc.nextDouble();
 		account.whitdraw(whitdrawValue);
-		System.out.println("Updated account data: ");
+		System.out.println("Atualização de dados da conta: ");
 		System.out.println(account);
 		
 		
