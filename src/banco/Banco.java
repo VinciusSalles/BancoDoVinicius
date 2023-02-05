@@ -41,7 +41,7 @@ public class Program {
 		System.out.println(account);
 		
 		System.out.println();
-		System.out.println("Enter a whitdraw value: ");
+		System.out.println("Digite o valor a ser retirado: ");
 		double whitdrawValue = sc.nextDouble();
 		account.whitdraw(whitdrawValue);
 		System.out.println("Updated account data: ");

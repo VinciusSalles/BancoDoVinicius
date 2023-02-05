@@ -1,62 +1,53 @@
-package banco;
+package entities;
 
-import cadastro.Pessoa;
-
-public class Conta {
+public class Account {
 	
-	private Pessoa titular; 
-	private int agencia, numeroConta;
-	private float saldo;
+	private int number;
+	private String holder;
+	private double balance;
 	
-		public Conta(Pessoa titular, int agencia, int numeroConta) {
-			super();
-			this.titular = titular;
-			this.agencia = agencia;
-			this.numeroConta = numeroConta;
-			saldo = 500;
-		}
+	public Account(int number, String holder) {
+		this.number = number;
+		this.holder = holder;
+	}
+
+	public Account(int number, String holder, double initialDeposit) {
+		this.number = number;
+		this.holder = holder;
+		deposit(initialDeposit);
+	}
 	
-		public float adicionarSaldo(float valor) {
-			saldo += valor;
-			return saldo;
-		}
-		
-		public void removerSaldo(float valor) {
-			saldo -= valor;
-		}
+	public int getNumber() {
+		return number;
+	}
 
-		public Pessoa getTitular() {
-			return titular;
-		}
+	public String getHolder() {
+		return holder;
+	}
 
-		public void setTitular(Pessoa titular) {
-			this.titular = titular;
-		}
+	public void setHolder(String holder) {
+		this.holder = holder;
+	}
 
-		public int getAgencia() {
-			return agencia;
-		}
-
-		public void setAgencia(int agencia) {
-			this.agencia = agencia;
-		}
-
-		public int getNumeroConta() {
-			return numeroConta;
-		}
-
-		public void setNumeroConta(int numeroConta) {
-			this.numeroConta = numeroConta;
-		}
-
-		public float getSaldo() {
-			return saldo;
-		}
-
-		public void setSaldo(float saldo) {
-			this.saldo = saldo;
-		}
-		
-		
+	public double getBalance() {
+		return balance;
+	}
+	
+	public void deposit(double amount) {
+		balance += amount;
+	}
+	
+	public void whitdraw(double amount) {
+		balance -= amount + 5.0;
+	}
+	
+	public String toString() {
+		return "Account: "
+				+ number
+				+ " , Holder: "
+				+ holder
+				+ " , Balance: $ "
+				+ String.format("%.2f", balance);
+	}
 	
 }
