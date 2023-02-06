@@ -1,51 +1,51 @@
-package application;
+package banco;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Account;
+import Conta.contaPessoal;
 
-public class Program {
+public class Banco {
 
 	public static void main(String[] args) {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		Account account;
+		contaPessoal contaPessoal;
 		
 		System.out.println("Digite o numero da conta: ");
-		int number = sc.nextInt();
-		System.out.println("Digite o nome do titular: ");
+		int numero = sc.nextInt();
+		System.out.println("Nome do titular: ");
 		sc.nextLine();
-		String holder = sc.nextLine();
-		System.out.println("Deseja fazer um deposito inicial (s/n)? ");
+		String titular = sc.nextLine();
+		System.out.println("Existe alguem deposito inicial (s/n)? ");
 		char response = sc.next().charAt(0);
 		if (response == 's') {
-			System.out.println("Entre com o valor inicial a ser depositado: ");
-			double initialDeposit = sc.nextDouble();
-			account = new Account(number, holder, initialDeposit);
+			System.out.println("Entre com o valor do deposito: ");
+			double depositoInicial = sc.nextDouble();
+			contaPessoal = new contaPessoal(numero, titular, depositoInicial);
 		}
 		else {
-		   account = new Account(number, holder);
+			contaPessoal = new contaPessoal(numero, titular);
 		}
 		
 		System.out.println();
 		System.out.println("Dados da conta: ");
-		System.out.println(account);
+		System.out.println(contaPessoal);
 		
 		System.out.println();
-		System.out.println("Entre com um novo valor de deposito: ");
-		double depositValue = sc.nextDouble();
-		account.deposit(depositValue);
-		System.out.println("Updated account data: ");
-		System.out.println(account);
+		System.out.println("Entre com um novo deposito: ");
+		double valorDeposito = sc.nextDouble();
+		contaPessoal.deposito(valorDeposito);
+		System.out.println("Dados atuais da conta: ");
+		System.out.println(contaPessoal);
 		
 		System.out.println();
-		System.out.println("Digite o valor a ser retirado: ");
-		double whitdrawValue = sc.nextDouble();
-		account.whitdraw(whitdrawValue);
-		System.out.println("Atualização de dados da conta: ");
-		System.out.println(account);
+		System.out.println("Entre com um valor a sacar: ");
+		double valorSaque = sc.nextDouble();
+		contaPessoal.saque(valorSaque);
+		System.out.println("Dados atuais da conta: ");
+		System.out.println(contaPessoal);
 		
 		
 		sc.close();
